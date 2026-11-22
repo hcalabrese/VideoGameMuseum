@@ -1,0 +1,123 @@
+/* Base: the museum lobby (dark gallery) */
+:root{
+--bg:#15171c;--ink:#f1efe9;--muted:#a7a9b3;--link:#6fc3e0;--rule:#2c2f38;
+--head-bg:#0d0e11;--head-ink:#f1efe9;--head-muted:#a7a9b3;
+--main-bg:transparent;--main-radius:0;
+--h-font:"Trebuchet MS",Verdana,sans-serif;--h-color:#f1efe9;--h-shadow:none;--h-transform:none;
+--ph-bg:#0d0e11;--ph-ink:#f1efe9;--ph-muted:#a7a9b3;--ph-radius:0;--ph-clip:none;
+--frame-border:10px solid #2a2418;--frame-shadow:0 0 60px rgba(255,255,255,.06),0 20px 40px rgba(0,0,0,.6);
+--foot-bg:#0d0e11;--foot-ink:#a7a9b3;
+--accent:#e8c34a;--floor:#0d0e11;--line:#2c2f38}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.7;font-size:18px;min-height:100vh}
+a{color:var(--link)}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+header.site{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding:1rem 2rem;background:var(--head-bg);border-bottom:1px solid var(--rule);font-family:var(--h-font)}
+header.site .brand{font-weight:700;letter-spacing:.04em;color:var(--head-ink);text-decoration:none}
+header.site nav{display:flex;gap:1.25rem;flex-wrap:wrap}
+header.site nav a{color:var(--head-muted);text-decoration:none;padding-bottom:2px;border-bottom:2px solid transparent}
+header.site nav a:hover,header.site nav a[aria-current]{color:var(--head-ink);border-bottom-color:var(--accent)}
+main{max-width:1000px;margin:2rem auto 3rem;padding:2.5rem 1.5rem 3rem;background:var(--main-bg);border-radius:var(--main-radius)}
+h1,h2,h3{font-family:var(--h-font);line-height:1.15;color:var(--h-color);text-shadow:var(--h-shadow);text-transform:var(--h-transform)}
+h1{font-size:clamp(2.2rem,6vw,4rem);margin:0 0 .5rem}
+.lead{font-size:1.25rem;color:var(--muted);max-width:60ch}
+.frame{border:var(--frame-border);background:#000;box-shadow:var(--frame-shadow);margin:2rem 0}
+.frame img,.frame svg{display:block;width:100%;height:auto}
+.placard{border-left:4px solid var(--accent);background:var(--ph-bg);color:var(--ph-muted);padding:1rem 1.25rem;font-family:"Trebuchet MS",Verdana,sans-serif;font-size:.95rem;border-radius:var(--ph-radius);clip-path:var(--ph-clip)}
+.placard dl{display:grid;grid-template-columns:max-content 1fr;gap:.25rem 1.25rem;margin:0}
+.placard dt{color:var(--ph-ink);font-weight:700}.placard dd{margin:0}
+.rooms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.75rem;margin-top:2.5rem}
+.room{display:block;text-decoration:none;color:var(--ink);background:var(--floor);border:1px solid var(--line)}
+.room:hover{border-color:var(--accent)}
+.room .frame{margin:1rem;box-shadow:none;border-width:6px}
+.room .frame img{aspect-ratio:4/3;object-fit:cover}
+.room .txt{padding:0 1.25rem 1.25rem;font-family:"Trebuchet MS",Verdana,sans-serif}
+.room h2{margin:.25rem 0;font-size:1.4rem;color:var(--ink)}
+.room p{margin:.25rem 0;color:var(--muted);font-size:.95rem}
+.room.mario{--accent:#e4352b}.room.cyber{--accent:#fcee0a}.room.rivals{--accent:#a45cff}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:2rem}
+.cols h2{font-size:1.3rem;border-bottom:3px solid var(--accent);padding-bottom:.4rem}
+ul.tidy{padding-left:1.1rem}
+.pager{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:3rem;padding-top:1.5rem;border-top:2px solid var(--rule);font-family:"Trebuchet MS",Verdana,sans-serif;font-weight:700}
+footer{text-align:center;color:var(--foot-ink);padding:2rem;background:var(--foot-bg);font-family:"Trebuchet MS",Verdana,sans-serif;font-size:.85rem}
+@media (prefers-reduced-motion:no-preference){.room{transition:border-color .2s,transform .2s}.room:hover{transform:translateY(-3px)}}
+
+/* New Super Mario Bros.: sky, clouds, red logo, brick frame, ? block placard, grass */
+body.mario{
+--accent:#f7c52b;--ink:#0b1f45;--muted:#16346b;--link:#a3140c;--rule:#e4352b;
+--bg:radial-gradient(ellipse 90px 34px at 12% 14%,#fff 98%,transparent),radial-gradient(ellipse 120px 40px at 82% 9%,#fff 98%,transparent),radial-gradient(ellipse 100px 32px at 70% 38%,#fff 98%,transparent),linear-gradient(#3d94ee,#9fd3fa 70%,#c6ecff);
+--head-bg:#e4352b;--head-ink:#fff;--head-muted:#ffe3df;
+--main-bg:rgba(255,255,255,.9);--main-radius:22px;
+--h-font:"Arial Rounded MT Bold","Arial Black","Trebuchet MS",sans-serif;--h-color:#fff;--h-shadow:3px 3px 0 #2a1630,-1px -1px 0 #2a1630,1px -1px 0 #2a1630,-1px 1px 0 #2a1630;
+--ph-bg:#f7c52b;--ph-ink:#4a2a05;--ph-muted:#4a2a05;--ph-radius:10px;
+--frame-border:10px solid #b5651d;--frame-shadow:0 0 0 4px #f7c52b,0 12px 0 #3f9b3f;
+--foot-bg:#3f9b3f;--foot-ink:#fff}
+body.mario header.site{border-bottom:6px solid #3f9b3f}
+body.mario .cols h2{color:#e4352b;text-shadow:none}
+body.mario footer{border-top:10px solid #b5651d}
+body.mario .placard{border-left-color:#b5651d;border:3px solid #b5651d}
+
+/* Cyberpunk 2077: yellow field, black jacket panels, cyan-blue edge, angular cuts */
+body.cyber{
+--accent:#1ea7ff;--ink:#0a0a0a;--muted:#1b1b1b;--link:#0a0a0a;--rule:#0a0a0a;
+--bg:#fcee0a;
+--head-bg:#0a0a0a;--head-ink:#fcee0a;--head-muted:#e6dc3a;
+--main-bg:transparent;
+--h-font:Impact,"Arial Narrow Bold","Franklin Gothic Medium",sans-serif;--h-color:#0a0a0a;--h-shadow:3px 3px 0 #1ea7ff;--h-transform:uppercase;
+--ph-bg:#0a0a0a;--ph-ink:#fcee0a;--ph-muted:#e8e8e8;--ph-clip:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px));
+--frame-border:5px solid #0a0a0a;--frame-shadow:12px 12px 0 #1ea7ff;
+--foot-bg:#0a0a0a;--foot-ink:#fcee0a}
+body.cyber header.site{border-bottom:4px solid #1ea7ff}
+body.cyber header.site nav a:hover,body.cyber header.site nav a[aria-current]{border-bottom-color:#1ea7ff}
+body.cyber .lead{font-weight:700;color:#0a0a0a}
+body.cyber .cols h2{font-size:1.6rem;text-shadow:2px 2px 0 #1ea7ff}
+body.cyber a{text-decoration-thickness:2px}
+body.cyber .placard{border-left-color:#1ea7ff}
+
+/* Marvel Rivals: anniversary party in purple, pink, gold and mint */
+body.rivals{
+--accent:#ffd36b;--ink:#fff7ff;--muted:#e9d4f5;--link:#8ff3e6;--rule:#ffd36b;
+--bg:radial-gradient(circle at 10% 20%,rgba(255,211,107,.35) 0 3px,transparent 4px),radial-gradient(circle at 85% 12%,rgba(143,243,230,.35) 0 3px,transparent 4px),radial-gradient(circle at 60% 70%,rgba(255,143,208,.35) 0 4px,transparent 5px),linear-gradient(165deg,#241047,#4f2380 50%,#b8458f);
+--bg-size:240px 240px;
+--head-bg:linear-gradient(90deg,#241047,#5b2a8f);--head-ink:#fff7ff;--head-muted:#e0c8f0;
+--main-bg:rgba(30,12,62,.55);--main-radius:24px;
+--h-font:"Trebuchet MS","Segoe UI",sans-serif;--h-color:#fff7ff;--h-shadow:0 0 18px rgba(255,211,107,.65);
+--ph-bg:#fff0fa;--ph-ink:#3a1250;--ph-muted:#4d2a66;--ph-radius:18px;
+--frame-border:6px solid #ffd36b;--frame-shadow:0 0 40px rgba(255,143,208,.55),0 0 90px rgba(143,243,230,.25);
+--foot-bg:#241047;--foot-ink:#e0c8f0}
+body.rivals{background-size:240px 240px,240px 240px,240px 240px,auto}
+body.rivals header.site{border-bottom:3px solid #ffd36b}
+body.rivals .frame{border-radius:14px;overflow:hidden}
+body.rivals .cols h2{color:#ffd36b}
+body.rivals .placard{border-left-color:#ff8fd0}
+
+/* Home page */
+body.home{background:radial-gradient(ellipse at 50% 0,#2a2f3d 0,#15171c 60%)}
+body.home main{max-width:1100px}
+.hero{text-align:center}
+.hero h1{font-size:clamp(2.6rem,8vw,5.5rem);letter-spacing:.02em;margin-bottom:1rem;background:linear-gradient(90deg,#ff5a4d,#fcee0a 45%,#b57bff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{margin:0 auto;max-width:56ch}
+.collage{display:flex;justify-content:center;align-items:center;gap:1.5rem;margin:3rem 0 2rem;flex-wrap:wrap}
+.piece{display:block;width:min(300px,100%);background:#000;box-shadow:0 20px 40px rgba(0,0,0,.6)}
+.piece img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.piece.p1{border:8px solid #b5651d;outline:3px solid #f7c52b;transform:rotate(-4deg)}
+.piece.p2{border:5px solid #0a0a0a;box-shadow:10px 10px 0 #1ea7ff;width:min(340px,100%);transform:translateY(-14px)}
+.piece.p3{border:6px solid #ffd36b;box-shadow:0 0 40px rgba(255,143,208,.55);transform:rotate(4deg)}
+@media (prefers-reduced-motion:no-preference){.piece{transition:transform .25s}.piece:hover{transform:scale(1.05) rotate(0)}}
+.piece:focus-visible{outline:3px solid #fff}
+.section-title{text-align:center;font-size:1.8rem;margin:3.5rem 0 1rem}
+body.home .rooms{margin-top:1.5rem}
+body.home .room{border-radius:16px;overflow:hidden}
+body.home .room h3{margin:.25rem 0;font-size:1.45rem}
+.room .enter{display:inline-block;margin-top:.5rem;font-weight:700;padding:.35rem .9rem;border-radius:999px}
+.room.mario{background:#d9f0ff;color:#0b1f45;border:4px solid #e4352b}
+.room.mario h3{color:#e4352b}.room.mario p{color:#16346b}.room.mario .frame{border-color:#b5651d}.room.mario .enter{background:#e4352b;color:#fff}
+.room.cyber{background:#fcee0a;color:#0a0a0a;border:4px solid #0a0a0a;box-shadow:8px 8px 0 #1ea7ff}
+.room.cyber h3{color:#0a0a0a;font-family:Impact,"Arial Narrow Bold",sans-serif;text-transform:uppercase;font-weight:400;font-size:1.7rem}.room.cyber p{color:#1b1b1b}.room.cyber .frame{border-color:#0a0a0a}.room.cyber .enter{background:#0a0a0a;color:#fcee0a;border-radius:0}
+.room.rivals{background:linear-gradient(165deg,#3a1a6b,#8a3a99);color:#fff7ff;border:4px solid #ffd36b}
+.room.rivals h3{color:#ffd36b}.room.rivals p{color:#f1ddf8}.room.rivals .frame{border-color:#ffd36b}.room.rivals .enter{background:#ffd36b;color:#3a1250}
+.room:hover{border-color:inherit}
+@media (max-width:700px){.piece.p1,.piece.p2,.piece.p3{transform:none}}
+
+/* Smaller images on game pages */
+main > .frame{max-width:520px;margin:2rem auto}
